@@ -230,8 +230,9 @@ def plot_elems(
         contour = contour[1]
 
     for k, e in enumerate(E):
-        NA = int(e[-2])
-        NE = int(e[-1])
+        pts_labels = list(X.labels)
+        NA = pts_labels.index(int(e[-2]))
+        NE = pts_labels.index(int(e[-1]))
 
         if contour is not None:
             # build up colormap and normalizer
